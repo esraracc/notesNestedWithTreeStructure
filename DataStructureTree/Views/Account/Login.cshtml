@@ -1,0 +1,28 @@
+﻿@model LoginModel
+
+@{
+    ViewData["Title"] = "Sign In";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<!-- Login -->
+<div class="nk-block toggled" id="l-login">
+    <div class="nk-form">
+        <form asp-controller="Account" asp-action="Login" method="post" class="pt-3">
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <div class="input-group mt-5">
+                <div class="nk-int-st">
+                    <input type="text" class="form-control" placeholder="E-Mail" asp-for="Email" />
+                </div>
+            </div>
+            <div class="input-group mg-t-15">
+                <div class="nk-int-st">
+                    <input type="password" class="form-control" placeholder="Password" asp-for="Password" />
+                </div>
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-block btn-success font-weight-medium">SIGN IN</button>
+            </div>
+        </form>
+    </div>
+</div>

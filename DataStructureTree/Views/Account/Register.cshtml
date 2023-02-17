@@ -1,0 +1,46 @@
+﻿@model RegisterModel
+
+@{
+    ViewData["Title"] = "Kayıt Ol";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+
+<!-- Register -->
+<div class="nk-block" id="l-register">
+    <div class="nk-form">
+        <form asp-controller="Account" asp-action="Register" method="post" class="pt-3">
+            <div class="input-group">
+                <div class="nk-int-st">
+                    <input type="text" class="form-control" placeholder="FirstName" asp-for="FirstName" />
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="nk-int-st">
+                    <input type="text" class="form-control" placeholder="LastName" asp-for="LastName" />
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="nk-int-st">
+                    <input type="text" class="form-control" placeholder="Email Address" asp-for="Email" />
+                </div>
+            </div>
+            <div class="input-group mg-t-15">
+                <div class="nk-int-st">
+                    <input type="text" class="form-control" placeholder="PhoneNumber" asp-for="PhoneNumber" />
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="nk-int-st">
+                    <input type="text" class="form-control" placeholder="Password" asp-for="Password" />
+                </div>
+            </div>
+            <div class="input-group mg-t-15">
+                <div class="nk-int-st">
+                    <input type="password" class="form-control" placeholder="RePassword" asp-for="RePassword" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-login btn-success btn-float">Kayıt ol</button>
+        </form>
+    </div>
+</div>

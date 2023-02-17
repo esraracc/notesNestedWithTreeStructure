@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Abstract;
 using DataStructureTree.Models;
 using EntityLayer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,25 +13,29 @@ using System.Threading.Tasks;
 
 namespace DataStructureTree.Controllers
 {
+    [Authorize(Roles = "User")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly UserManager<User> _userManager;
 
-        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork, UserManager<User> userManager)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
+            _userManager = userManager;
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var user = await _userManager.GetUserAsync(User);
             var model = new NoteModel
             {
                 IsFirstCall = true,
-                Notes = _unitOfWork.Notes.GetAll().Where(x => x.ParentId == null).ToList(),
-                GetAllNotes = _unitOfWork.Notes.GetAll()
+                Notes = _unitOfWork.Notes.GetAll().Where(x => x.ParentId == null).Where(x => x.UserId == user.Id).ToList(),
+                GetAllNotes = _unitOfWork.Notes.GetAll().Where(x => x.UserId == user.Id).ToList()
             };
             return View(model);
         }
@@ -54,15 +60,17 @@ namespace DataStructureTree.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateNote(NoteModel model)
+        public async Task<IActionResult> CreateNote(NoteModel model)
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.GetUserAsync(User);
                 var entity = new Note()
                 {
                     Content = model.Note.Content,
                     ParentId = model.Note.ParentId,
-                    IsDeleted = false
+                    IsDeleted = false,
+                    UserId = user.Id
                 };
                 _unitOfWork.Notes.Create(entity);
                 return RedirectToAction("Index");

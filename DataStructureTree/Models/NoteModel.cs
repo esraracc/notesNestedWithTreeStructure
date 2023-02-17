@@ -12,5 +12,6 @@ namespace DataStructureTree.Models
         public ICollection<Note> GetAllNotes { get; set; }
         public ICollection<Note> Notes { get; set; }
         public bool IsFirstCall { get; set; }
+        public string UserId { get; set; }
     }
 }

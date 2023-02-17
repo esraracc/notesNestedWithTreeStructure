@@ -35,6 +35,9 @@ namespace DataLayer.Migrations
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("NoteId");
 
                     b.HasIndex("ParentId");

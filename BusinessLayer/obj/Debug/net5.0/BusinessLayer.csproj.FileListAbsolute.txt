@@ -1,0 +1,17 @@
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\bin\Debug\net5.0\BusinessLayer.deps.json
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\bin\Debug\net5.0\BusinessLayer.dll
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\bin\Debug\net5.0\ref\BusinessLayer.dll
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\bin\Debug\net5.0\BusinessLayer.pdb
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\bin\Debug\net5.0\DataLayer.dll
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\bin\Debug\net5.0\DataLayer.pdb
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\obj\Debug\net5.0\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\obj\Debug\net5.0\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\obj\Debug\net5.0\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\obj\Debug\net5.0\BusinessLayer.AssemblyInfo.cs
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\obj\Debug\net5.0\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\obj\Debug\net5.0\BusinessLayer.csproj.CopyComplete
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\obj\Debug\net5.0\BusinessLayer.dll
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\obj\Debug\net5.0\ref\BusinessLayer.dll
+C:\Users\PC\Desktop\DataStructureTree\BusinessLayer\obj\Debug\net5.0\BusinessLayer.pdb
