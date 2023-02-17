@@ -1,0 +1,18 @@
+﻿
+@model NoteModel
+<div>
+    @foreach (var note in Model.Notes)
+    {
+        <div class="d-flex my-2">
+            @note.Content
+            <form asp-controller="Home" asp-action="DeleteNote" asp-route-id="@note.NoteId" method="post">
+                <button type="submit" class="btn btn-sm bg-danger text-white ml-3">X</button>
+            </form>
+        </div>
+        if (note.SubNotes != null)
+        {
+            @await Component.InvokeAsync("Notes", new { notes = note.SubNotes, isFirstCall = false })
+        }
+
+    }
+</div>

@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model NoteModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>The user can add and delete new notes under a note with the tree structure.</p>
+    <form asp-controller="Home" asp-action="CreateNote" method="post">
+        <input asp-for="Note.Content" placeholder="Enter Note" required />
+        <select class="form-select" aria-label="Default select example" asp-for="Note.ParentId" >
+            <option selected>Enter Parent Note</option>
+            @foreach (var item in Model.GetAllNotes)
+            {
+                <option value="@item.NoteId">@item.Content</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-sm bg-success">Save</button>
+    </form>
+
+    @foreach (var note in Model.Notes)
+    {
+
+        <div class="d-flex my-2">
+            @note.Content
+            <form asp-controller="Home" asp-action="DeleteNote" asp-route-id="@note.NoteId" method="post">
+                <button type="submit" class="btn btn-sm bg-danger text-white ml-3">X</button>
+            </form>
+        </div>
+
+
+        if (note.SubNotes != null)
+        {
+            @await Component.InvokeAsync("Notes", new { notes = note.SubNotes, isFirstCall = false })
+        }
+
+    }
+
+</div>
